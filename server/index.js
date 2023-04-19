@@ -32,7 +32,8 @@ app.use('/sales', salesRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;
-mongoose.connect(process.env.MONGO_URL, {
+const URL = process.env.MONGO_URL || 'mongodb+srv://user:556998@cluster0.mpwl87o.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
